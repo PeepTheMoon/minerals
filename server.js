@@ -14,7 +14,7 @@ app.get('/minerals', async(req, res) => {
 
   res.json(data.rows);
 });
-//some test commeonts
+//some test comments
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`Started on ${PORT}`);
