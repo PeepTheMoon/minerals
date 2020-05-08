@@ -2,16 +2,16 @@ module.exports = [
   {
     name: 'Amethyst',
     vibrates_to: 3,
-    healing: true,
-    associated_signs: 'pisces',
-    chakra: 'crown'
+    rarity: false,
+    associated_signs: 'Pisces',
+    chakra: 'Crown'
   },
   {
     name: 'Opal',
     vibrates_to: 8,
-    healing: true,
-    associated_signs: 'libra',
-    chakra: 'crown'
+    rarity: true,
+    associated_signs: 'Libra',
+    chakra: 'Crown'
   }
 ];
-//add more data later-  tests return an id, ask about where to include this
+//tests return an id, ask about where to include this

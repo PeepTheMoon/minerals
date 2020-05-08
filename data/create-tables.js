@@ -20,7 +20,7 @@ async function run() {
                     id SERIAL PRIMARY KEY NOT NULL,
                     name VARCHAR(512) NOT NULL,
                     vibrates_to INTEGER NOT NULL,
-                    healing BOOLEAN NOT NULL,
+                    rarity BOOLEAN NOT NULL,
                     associated_signs VARCHAR(512) NOT NULL,
                     chakra VARCHAR(512) NOT NULL
             );
