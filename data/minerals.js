@@ -14,3 +14,4 @@ module.exports = [
     chakra: 'crown'
   }
 ];
+//add more data later 

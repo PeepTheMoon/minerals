@@ -16,31 +16,27 @@ describe('app routes', () => {
     // TODO: ADD CLOSE DB SCRIPT
   });
 
-  test('returns animals', async() => {
+  test('returns minerals', async() => {
 
     const expectation = [
       {
-        'id': 1,
-        'name': 'bessie',
-        'coolfactor': 3,
-        'owner_id': 1
+        'name': 'Amethyst',
+        'vibrates_to': 3,
+        'healing': true,
+        'associated_signs': 'pisces',
+        'chakra': 'crown'
       },
       {
-        'id': 2,
-        'name': 'jumpy',
-        'coolfactor': 4,
-        'owner_id': 1
-      },
-      {
-        'id': 3,
-        'name': 'spot',
-        'coolfactor': 10,
-        'owner_id': 1
+        'name': 'Opal',
+        'vibrates_to': 8,
+        'healing': true,
+        'associated_signs': 'libra',
+        'chakra': 'crown'
       }
     ];
 
     const data = await fakeRequest(app)
-      .get('/animals')
+      .get('/minerals')
       .expect('Content-Type', /json/)
       .expect(200);
 
