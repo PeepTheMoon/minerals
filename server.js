@@ -23,6 +23,17 @@ app.get('/mineral/:id', async(req, res) => {
   res.json(data.rows);
 });
 
+//creates a mineral
+app.post('/minerals/', async(req, res) => {
+  const data = await client.query(
+    `insert into minerals (name, vibrates_to, rarity, associated_signs, chakra)
+    values ('quartz', 6, false, 'All', '3rd eye')
+    returning *;`
+  );
+
+  res.json(data.rows);
+});
+
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`Started on ${PORT}`);
