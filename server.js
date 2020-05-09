@@ -27,8 +27,9 @@ app.get('/mineral/:id', async(req, res) => {
 app.post('/minerals/', async(req, res) => {
   const data = await client.query(
     `insert into minerals (name, vibrates_to, rarity, associated_signs, chakra)
-    values ('quartz', 6, false, 'All', '3rd eye')
-    returning *;`
+    values ($1, $2, $3, $4, $5)
+    returning *;`,
+    [req.body.name, req.body.vibrates_to, req.body.rarity, req.body.associated_signs, req.body.chakra]
   );
 
   res.json(data.rows);
