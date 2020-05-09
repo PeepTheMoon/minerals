@@ -15,7 +15,7 @@ app.get('/minerals', async(req, res) => {
 });
 
 //gets one mineral
-app.get('/minerals/:id', async(req, res) => {
+app.get('/mineral/:id', async(req, res) => {
   const id = req.params.id;
   const data = await client.query('SELECT * from minerals where id=$1',
     [id]

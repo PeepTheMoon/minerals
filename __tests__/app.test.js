@@ -24,14 +24,16 @@ describe('app routes', () => {
         'vibrates_to': 3,
         'rarity': false,
         'associated_signs': 'Pisces',
-        'chakra': 'Crown'
+        'chakra': 'Crown',
+        'id': 1
       },
       {
         'name': 'Opal',
         'vibrates_to': 8,
         'rarity': true,
         'associated_signs': 'Libra',
-        'chakra': 'Crown'
+        'chakra': 'Crown',
+        'id': 2
       }
     ];
 
