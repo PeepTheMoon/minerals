@@ -1,10 +1,11 @@
 //imports = require
 require('dotenv').config();
 const client = require('./lib/client');
+client.connect();
 const app = require('./lib/app');
 
 // Initiate database connection
-client.connect();
+
 const PORT = process.env.PORT || 7890;
 
 //gets all minerals
@@ -24,7 +25,8 @@ app.get('/mineral/:id', async(req, res) => {
 });
 
 //creates a mineral
-app.post('/minerals/', async(req, res) => {
+app.post('/minerals', async(req, res) => {
+  console.log(req.body);
   const data = await client.query(
     `insert into minerals (name, vibrates_to, rarity, associated_signs, chakra)
     values ($1, $2, $3, $4, $5)

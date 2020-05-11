@@ -1,19 +1,21 @@
 require('dotenv').config();
 
 const fakeRequest = require('supertest');
-const app = require('../server.js');
+const app = require('../lib/app');
+const client = require('../lib/client');
+
 
 describe('app routes', () => {
-  beforeAll(() => {
-    // TODO: a
+  beforeAll(done => {
+    return client.connect(done);
   });
 
   beforeEach(() => {
     // TODO: ADD DROP SETUP DB SCRIPT
   });
 
-  afterAll(() => {
-    // TODO: ADD CLOSE DB SCRIPT
+  afterAll(done => {
+    return client.end(done);
   });
 
   test('returns minerals', async() => {

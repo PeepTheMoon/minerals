@@ -1,22 +1,15 @@
-name: Node.js CI
-
-on:
-  push:
-    branches: [ master, dev ]
-  pull_request:
-    branches: [ master, dev ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
+runs-on: ubuntu-latest
     container: node:latest
-    services:
-      mongo:
-        image: mongo
+
+services:
+  postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
     steps:
     - uses: actions/checkout@v2
     - run: npm ci
     - run: npm test
       env:
         CI: true
-        MONGODB_URI: mongodb://mongo:27017/testing-ci
+        DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
