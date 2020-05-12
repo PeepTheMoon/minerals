@@ -22,8 +22,13 @@ async function run() {
                     vibrates_to INTEGER NOT NULL,
                     rarity BOOLEAN NOT NULL,
                     associated_signs VARCHAR(512) NOT NULL,
-                    chakra VARCHAR(512) NOT NULL
+                    chakra VARCHAR(512) NOT NULL REFERENCES colors(id)
             );
+              CREATE TABLE colors (
+                    id SERIAL PRIMARY KEY NOT NULL,
+                    color VARCHAR(512) NOT NULL
+            );  
+
         `);
 
     console.log('create tables complete');

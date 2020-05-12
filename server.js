@@ -15,6 +15,22 @@ app.get('/minerals', async(req, res) => {
   res.json(data.rows);
 });
 
+//gets all colors
+app.get('/colors', async(req, res) => {
+  const data = await client.query('SELECT * from colors');
+
+  res.json(data.rows);
+});
+
+//gets one color
+app.get('/color/:id', async(req, res) => {
+  const id = req.params.id;
+  const data = await client.query('SELECT * from colors where id=$1',
+    [id]
+  );
+  res.json(data.rows);
+});
+
 //gets one mineral
 app.get('/mineral/:id', async(req, res) => {
   const id = req.params.id;
