@@ -22,7 +22,7 @@ async function run() {
                     vibrates_to INTEGER NOT NULL,
                     rarity BOOLEAN NOT NULL,
                     associated_signs VARCHAR(512) NOT NULL,
-                    chakra VARCHAR(512) NOT NULL REFERENCES colors(id)
+                    chakra VARCHAR(512) NOT NULL
             );
               CREATE TABLE colors (
                     id SERIAL PRIMARY KEY NOT NULL,

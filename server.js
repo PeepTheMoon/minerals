@@ -22,6 +22,13 @@ app.get('/colors', async(req, res) => {
   res.json(data.rows);
 });
 
+//gets all users
+app.get('/users', async(req, res) => {
+  const data = await client.query('SELECT * from users');
+
+  res.json(data.rows);
+});
+
 //gets one color
 app.get('/color/:id', async(req, res) => {
   const id = req.params.id;
@@ -35,6 +42,15 @@ app.get('/color/:id', async(req, res) => {
 app.get('/mineral/:id', async(req, res) => {
   const id = req.params.id;
   const data = await client.query('SELECT * from minerals where id=$1',
+    [id]
+  );
+  res.json(data.rows);
+});
+
+//gets one user
+app.get('/user/:id', async(req, res) => {
+  const id = req.params.id;
+  const data = await client.query('SELECT * from user where id=$1',
     [id]
   );
   res.json(data.rows);
