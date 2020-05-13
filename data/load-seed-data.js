@@ -27,16 +27,17 @@ async function run() {
 
     await Promise.all(
       minerals.map(mineral => {
-        return client.query(`INSERT INTO minerals (name, vibrates_to, rarity, associated_signs, chakra)
-                    VALUES ($1, $2, $3, $4, $5);`,
-        [mineral.name, mineral.vibrates_to, mineral.rarity, mineral.associated_signs, mineral.chakra]);
+        return client.query(`INSERT INTO minerals (name, vibrates_to, rarity, associated_signs, chakra, color_id, user_id)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7);`,
+        [mineral.name, mineral.vibrates_to, mineral.rarity, mineral.associated_signs, mineral.chakra, mineral.color_id, mineral.user_id]);
       })
     );
 
     await Promise.all(
       colors.map(color => {
         return client.query(`INSERT INTO colors (color)
-                    VALUES ($1);`,
+                    VALUES ($1)
+                    RETURNING *;`,
         [color.color]);
       })
     );
