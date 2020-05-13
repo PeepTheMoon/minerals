@@ -17,21 +17,21 @@ app.get('/minerals', async(req, res) => {
   JOIN colors
   ON minerals.color_id = colors.id`);
 
-  res.json(data.rows[0]);
+  res.json(data.rows);
 });
 
 //gets all colors
 app.get('/colors', async(req, res) => {
   const data = await client.query('SELECT * FROM colors');
 
-  res.json(data.rows[0]);
+  res.json(data.rows);
 });
 
 //gets all users
 app.get('/users', async(req, res) => {
   const data = await client.query('SELECT * FROM users');
 
-  res.json(data.rows[0]);
+  res.json(data.rows);
 });
 
 //gets one color
