@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 7890;
 
 //gets all minerals
 app.get('/minerals', async(req, res) => {
-  //triple check on colors.color in SELECT statement and if it should be plural or singular (re: line 41 in load-seed-data.js)
+  
   const data = await client.query(`
   SELECT minerals.id, minerals.name, minerals.vibrates_to, minerals.rarity, minerals.associated_signs, minerals.chakra, colors.color
   FROM minerals
