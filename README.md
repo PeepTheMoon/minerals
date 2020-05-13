@@ -1,8 +1,6 @@
 https://safe-bastion-92853.herokuapp.com/ | https://git.heroku.com/safe-bastion-92853.git
 
 # Questions/notes to self:
-In server.js- triple check on colors.color in SELECT statement and if it should be plural or singular (re: line 41 in load-seed-data.js)
-
 Get clarification on: Create new GET /<types/categories> route for list of lookup values for the dropdown filter.
 https://github.com/alchemycodelab/fsjs-foundations-ii-spring-2020/blob/master/curriculum/class-11/LAB-11.md
 
