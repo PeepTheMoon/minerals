@@ -6,11 +6,6 @@ In server.js- triple check on colors.color in SELECT statement and if it should 
 Get clarification on: Create new GET /<types/categories> route for list of lookup values for the dropdown filter.
 https://github.com/alchemycodelab/fsjs-foundations-ii-spring-2020/blob/master/curriculum/class-11/LAB-11.md
 
-
-
-
-
-
 # Create Alchemy SQL BE
 
 ## Getting started

@@ -26,19 +26,19 @@ async function run() {
     const user = users[0].rows[0];
 
     await Promise.all(
-      minerals.map(mineral => {
-        return client.query(`INSERT INTO minerals (name, vibrates_to, rarity, associated_signs, chakra, color_id, user_id)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7);`,
-        [mineral.name, mineral.vibrates_to, mineral.rarity, mineral.associated_signs, mineral.chakra, mineral.color_id, mineral.user_id]);
-      })
-    );
-
-    await Promise.all(
       colors.map(color => {
         return client.query(`INSERT INTO colors (color)
                     VALUES ($1)
                     RETURNING *;`,
         [color.color]);
+      })
+    );
+
+    await Promise.all(
+      minerals.map(mineral => {
+        return client.query(`INSERT INTO minerals (name, vibrates_to, rarity, associated_signs, chakra, color_id, user_id)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7);`,
+        [mineral.name, mineral.vibrates_to, mineral.rarity, mineral.associated_signs, mineral.chakra, mineral.color_id, user.id]);
       })
     );
 
